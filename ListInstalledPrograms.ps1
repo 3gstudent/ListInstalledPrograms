@@ -21,18 +21,18 @@ if ([IntPtr]::Size -eq 8)
 {
 	Write-Host "[*] OS: x64"
 	Write-Host "[*] List the 64 bit programs that have been installed"
-	$RegPath = "Registry::"+"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\"
+	$RegPath = "Registry::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\"
 	ListPrograms -RegPath $RegPath
 
 	Write-Host "[+] List the 32 bit programs that have been installed"
 
-	$RegPath = "Registry::"+"HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\"
+	$RegPath = "Registry::HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\"
 	ListPrograms -RegPath $RegPath
  }
 else
 {
 	Write-Host "[*] OS: x86"
  	Write-Host "[*] List the 32 bit programs that have been installed"
-	$RegPath = "Registry::"+"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\"
+	$RegPath = "Registry::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\"
 	ListPrograms -RegPath $RegPath
 }
